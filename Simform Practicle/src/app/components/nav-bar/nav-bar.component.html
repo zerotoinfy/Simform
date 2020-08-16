@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+  <div class="container">
+    <a routerLink="/welcome" class="navbar-brand">SIMFORM PRACTICLE</a>
+
+    <div class="collapse navbar-collapse">
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="/view-products" class="nav-link">Dashboard</a>
+        </li>
+      </ul> 
+    </div>
+    <ul class="navbar-nav ml-auto">
+      <li *ngIf="isLoggedIn" class="nav-item">
+        <a routerLink="/create-product" class="nav-link">Create Product</a>
+      </li>
+      <li *ngIf="isLoggedIn" class="nav-item">
+        <a routerLink="/product-list" class="nav-link">Manage Products</a>
+      </li>
+      <li *ngIf="isLoggedIn" class="nav-item">
+        <a href="#" (click)="onLogoutClick()" class="nav-link">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

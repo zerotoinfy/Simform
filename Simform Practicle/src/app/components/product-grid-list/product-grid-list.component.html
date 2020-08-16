@@ -1,0 +1,33 @@
+<div class="card text-center m-3">
+ 
+  <div class="card-body">
+    <header>
+      <ul>
+        <i class='fa fa-shopping-cart'>
+          <span class='counter'></span>
+        </i>
+      </ul>
+    </header>
+    <div class='row'>
+      
+      <div class='product--blue' *ngFor="let product of pageOfItems; let i = index">
+        <div class='product_inner'>
+          <img src='http://wellandgood.com/wp-content/uploads/2012/07/Nike-Free-30-Womens-Running-Shoe-511495_600_A.png'
+            width='300'>
+          <p>{{product.name}}</p>
+          <p>Price: {{product.price | currency: '&#8377;'}}</p>
+          <button>Add to basket</button>
+          <p>Category: {{product.category}}</p>
+        </div>
+        <div class='product_overlay'>
+          <h2>Discount: {{product.discount}}%</h2>
+          <i class='fa fa-check'></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer pb-0 pt-3">
+    <jw-pagination [items]="Product" [pageSize]="8" (changePage)="onChangePage($event)"></jw-pagination>
+  </div>
+</div>

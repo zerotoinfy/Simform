@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+  <div class="col-md-4 register-employee">
+    <div class="card-header">
+      <h3 class="mb-0">Create Product</h3>
+    </div>
+    <!-- form card register -->
+    <div class="card-body">
+      <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="inputName">Name</label>
+          <input class="form-control" type="text" formControlName="name">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+            Product Name Is Required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3">Category</label>
+          <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+            formControlName="category">
+            <option value="">Choose...</option>
+            <option *ngFor="let category of Categories" value="{{category}}">{{category}}
+            </option>
+          </select>
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.category.errors?.required">
+            Choose Category.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Image</label>
+          
+          <div style="text-align:center">
+            <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+            <div><img [src]="url" *ngIf="url"></div>
+            <p>
+              <input class="form-control" type="file" (change)="selectFile($event)" formControlName="image">
+            </p>
+          </div>
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.name.errors?.required">
+            Product Image is Required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Price</label>
+          <input class="form-control" type="number" formControlName="price">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.price.errors?.required">
+            Price Is Required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Discount</label>
+          <input class="form-control" type="number" formControlName="discount">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.discount.errors?.required">
+            Discount Is Required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Net Price</label>
+          <input class="form-control" type="number" formControlName="netprice">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.netprice.errors?.required">
+            Net Prics Is Required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputVerify3">Description</label>
+          <input class="form-control" type="text" formControlName="description">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.description.errors?.required">
+            Enter Proper Description.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit">Register</button>
+        </div>
+      </form>
+
+    </div>
+  </div><!-- form card register -->
+</div>
