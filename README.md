@@ -50,6 +50,17 @@
 </ol>
 </li>
 
-<li>Third item</li>
-<li>Fourth item</li>
+<li>jwt is implemented and everytime a user login after registration a token is saved for him/her in local storage.</li>
+
+<li>CRUD operations are successfully implemented and can be tested aslo.</li>
+
+<li>Except Login & Registration all the routes are protected and none of them can be visited without login/authentication.</li>
+
+<li>CRUD operations are successfully implemented and can be tested aslo.</li>
+
+<li>You will be able to check a Grid view and a Table view of the added products in the database.</li>
+
+<li>No Duplicate user can register with the project.</li>
+
+<li>Pagination can be seen on Grid view after adding more than 8 products in the mongodb.</li>
 </ol>
