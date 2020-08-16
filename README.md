@@ -50,6 +50,9 @@
 </ol>
 </li>
 
+---
+## Other Instructions
+
 <li>jwt is implemented and everytime a user login after registration a token is saved for him/her in local storage.</li>
 
 <li>CRUD operations are successfully implemented and can be tested aslo.</li>
