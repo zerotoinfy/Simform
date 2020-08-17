@@ -20,7 +20,6 @@ import { ProductGridListComponent } from './components/product-grid-list/product
 import { AuthGuard } from './auth.guard';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { FilterPipe } from './filter.pipe';
     NavBarComponent,
     JwPaginationComponent,
     WelcomeComponent,
-    FilterPipe
    
   ],
   imports: [

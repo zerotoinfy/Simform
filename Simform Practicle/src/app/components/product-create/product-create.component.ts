@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { ApiService } from '../../service/api.service';
 import { Component, OnInit, NgZone } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-product-create',
@@ -15,6 +15,7 @@ export class ProductCreateComponent implements OnInit {
   Categories: any = ['Electronics', 'Appliances', 'Parts & Accessories', 'Beauty & Personal Care', 'Clothing, Shoes and Jewelry', 'Luggage & Travel Gear', 'Musical Instruments', 'Sports & Outdoors', 'Toys & Games']
   url;
   msg = "";
+  actual_price: number;
 
   constructor(
     public fb: FormBuilder,
@@ -38,6 +39,15 @@ export class ProductCreateComponent implements OnInit {
       netprice: ['', [Validators.required]],
       description: ['', [Validators.required]]
     })
+  }
+
+  updateDiscount(e) {
+    console.log("This method is called.",this.productForm.get('price').value);
+    const price = this.productForm.get('price').value;
+    const  discount = this.productForm.get('discount').value;
+    this.actual_price = (parseFloat(discount.toString()) / 100) * parseFloat(price.toString());
+    console.log("The calculated actual price is: ", this.actual_price);
+    this.productForm.get('netprice').setValue(this.actual_price);
   }
 
   // Choose designation with select dropdown

@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       this.apiService.login(this.loginForm.value).subscribe(
         (res) => {
           var responseData = JSON.stringify(res)
-          console.log('Employee Login Successfully.')
+          console.log('User Login Successfully.')
           localStorage.setItem('token', res['token']);
           localStorage.setItem('email', res['email']);
           this.apiService.setLoggedIn(true);

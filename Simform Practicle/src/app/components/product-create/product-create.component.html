@@ -57,7 +57,7 @@
 
         <div class="form-group">
           <label for="inputName">Discount</label>
-          <input class="form-control" type="number" formControlName="discount">
+          <input class="form-control" type="number" formControlName="discount" (change)="updateDiscount($event)">
           <!-- error -->
           <div class="invalid-feedback" *ngIf="submitted && myForm.discount.errors?.required">
             Discount Is Required.
@@ -66,7 +66,7 @@
 
         <div class="form-group">
           <label for="inputName">Net Price</label>
-          <input class="form-control" type="number" formControlName="netprice">
+          <input class="form-control" type="number" formControlName="netprice" [(ngModel)]="actual_price">
           <!-- error -->
           <div class="invalid-feedback" *ngIf="submitted && myForm.netprice.errors?.required">
             Net Prics Is Required.

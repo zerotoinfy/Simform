@@ -68,7 +68,7 @@ export class ApiService {
     return this.http.get(`${this.baseUri}`);
   }
 
-  // Get employee
+  // Get Product
   getProduct(id): Observable<any> {
     let url = `${this.baseUri}/read/${id}`;
     return this.http.get(url, { headers: this.headers }).pipe(
@@ -79,7 +79,7 @@ export class ApiService {
     )
   }
 
-  // Update employee
+  // Update product
   updateProduct(id, data): Observable<any> {
     let url = `${this.baseUri}/update/${id}`;
     return this.http.put(url, data, { headers: this.headers }).pipe(
@@ -87,7 +87,7 @@ export class ApiService {
     )
   }
 
-  // Delete employee
+  // Delete product
   deleteProduct(id): Observable<any> {
     let url = `${this.baseUri}/delete/${id}`;
     return this.http.delete(url, { headers: this.headers }).pipe(
